@@ -28,4 +28,13 @@
       border: none;
     }
   }
+  &.facebook-sign-in {
+    background-color: #4267b2;
+    color: white;
+
+    &.hover {
+      background-color: #2f55a4;
+      border: none;
+    }
+  }
 }
