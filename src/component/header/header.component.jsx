@@ -10,14 +10,15 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import './header.styles.scss';
 
-const Header = ({ currentUser, displayName, hidden }) => (
+const Header = ({ currentUser, hidden }) => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="Logo" />
     </Link>
-
     <div className="options">
-      <span className="display-name">{`Welcome ${displayName}`}</span>
+      <span className="display-name">
+        {currentUser ? `Welcome ${currentUser.displayName}` : ''}
+      </span>
 
       <Link className="option" to="/shop">
         SHOP
@@ -40,12 +41,8 @@ const Header = ({ currentUser, displayName, hidden }) => (
   </div>
 );
 
-const mapStateToProps = ({
-  user: { currentUser, displayName },
-  cart: { hidden },
-}) => ({
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
   currentUser,
-  displayName,
   hidden,
 });
 
