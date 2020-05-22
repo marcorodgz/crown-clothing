@@ -12,7 +12,12 @@ const Header = ({ currentUser }) => (
     <Link className="logo-container" to="/">
       <Logo className="Logo" />
     </Link>
+
     <div className="options">
+      <span className="display-name">
+        {currentUser ? `Welcome ${currentUser.displayName}` : ''}
+      </span>
+
       <Link className="option" to="/shop">
         SHOP
       </Link>
